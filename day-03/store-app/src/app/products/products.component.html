@@ -1,0 +1,41 @@
+
+<h4>List of Products</h4>
+<!--<button class="btn btn-success">Save</button>-->
+
+<!--DataBinding w ith interpolation-->
+
+<div>
+Product Name:{{productName}}<br>
+Price: {{productPrice}}
+</div>
+<hr>
+<!--DataBinding with property binding(one-way binding)-->
+<div>
+Product Name:<input type="text" class="form-control" [value]="productName">
+Price:<input type="text" class="form-control" [value]="productPrice">
+</div>
+<hr>
+
+<!--DataBinding with property binding(two-way binding)-->
+<div>
+Product Name:<input type="text" class="form-control" [(ngModel)]="productName"><!--need to import forms module for this-->
+Price:<input type="text" class="form-control" [(ngModel)]="productPrice">
+</div>
+
+<hr>
+<!--Event binding (one-way binding)-->
+
+<div>
+  <button class="btn btn-success" (click)="onSave()">Save</button>
+</div>
+
+<!--Event binding (one-way binding)-->
+<div>
+Search:
+<input type="text" class="form-control" placeholder="Enter search test...." (keydown)="onSearch($event)">
+</div>
+
+
+<div>
+Festival discount of 10% available for {{productName}}. Hurry!!!!!!
+</div>
